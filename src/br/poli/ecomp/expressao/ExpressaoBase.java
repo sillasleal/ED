@@ -17,7 +17,6 @@
 package br.poli.ecomp.expressao;
 
 import br.poli.ecomp.stack.Pilha;
-import br.poli.ecomp.stack.PilhaDinamica;
 
 /**
  * Classe base para as expressões
@@ -29,7 +28,7 @@ abstract public class ExpressaoBase {
     /**
      * Lista de operadores permitidos para as operações
      */
-    protected final char[] operadores = new char[]{'+', '-', '*', '/', '^'};
+    protected final char[] operadores = new char[]{'+', '-', '*', '/'};
 
 
     /**

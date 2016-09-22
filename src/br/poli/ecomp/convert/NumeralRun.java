@@ -16,7 +16,6 @@
  */
 package br.poli.ecomp.convert;
 
-import java.awt.SplashScreen;
 import java.util.Scanner;
 
 /**

@@ -30,7 +30,7 @@ public interface Expressao {
      * @return Retorna o valor fina da expressão
      * @throws java.lang.Exception
      */
-    public Object avaliar(String expressao) throws Exception;
+    public int avaliar(String expressao) throws Exception;
 
     /**
      * Método que converte um tipo de expressão para outro

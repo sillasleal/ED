@@ -24,10 +24,9 @@ import br.poli.ecomp.stack.PilhaDinamica;
  */
 public class PosFixa extends ExpressaoBase implements Expressao {
 
-
     @SuppressWarnings("UnusedAssignment")
     @Override
-    public Object avaliar(String expressao) throws Exception {
+    public int avaliar(String expressao) throws Exception {
         if (expressao.length() == 0) {
             throw new Exception("A expressão informada esta vazia");
         }
