@@ -153,48 +153,6 @@ public class NumeralTest {
         assertEquals("11", num.converter("17", 10, 16));
         assertEquals("10000", num.converter("10", 16, 2));
         assertEquals("10", num.converter("10000", 2, 16));
-        //Testando o 18
-        assertEquals("16", num.converter("10000", 2, 10));
-        assertEquals("10000", num.converter("16", 10, 2));
-        assertEquals("16", num.converter("10", 16, 10));
-        assertEquals("10", num.converter("16", 10, 16));
-        assertEquals("12", num.converter("18", 10, 16));
-        assertEquals("10000", num.converter("10", 16, 2));
-        assertEquals("10", num.converter("10000", 2, 16));
-        //Testando o 19
-        assertEquals("16", num.converter("10000", 2, 10));
-        assertEquals("10000", num.converter("16", 10, 2));
-        assertEquals("16", num.converter("10", 16, 10));
-        assertEquals("A1", num.converter("161", 10, 16));
-        assertEquals("10000", num.converter("10", 16, 2));
-        assertEquals("10", num.converter("10000", 2, 16));
-        //Testando o 20
-        assertEquals("16", num.converter("10000", 2, 10));
-        assertEquals("10000", num.converter("16", 10, 2));
-        assertEquals("16", num.converter("10", 16, 10));
-        assertEquals("10", num.converter("16", 10, 16));
-        assertEquals("10000", num.converter("10", 16, 2));
-        assertEquals("10", num.converter("10000", 2, 16));
-        //Testando o 21
-        assertEquals("16", num.converter("10000", 2, 10));
-        assertEquals("10000", num.converter("16", 10, 2));
-        assertEquals("16", num.converter("10", 16, 10));
-        assertEquals("10", num.converter("16", 10, 16));
-        assertEquals("10000", num.converter("10", 16, 2));
-        assertEquals("10", num.converter("10000", 2, 16));
-        //Testando o 22
-        assertEquals("16", num.converter("10000", 2, 10));
-        assertEquals("10000", num.converter("16", 10, 2));
-        assertEquals("16", num.converter("10", 16, 10));
-        assertEquals("10", num.converter("16", 10, 16));
-        assertEquals("10000", num.converter("10", 16, 2));
-        assertEquals("10", num.converter("10000", 2, 16));
-        
-        
-        assertEquals("120", num.converter("170", 8, 10));
-        assertEquals("320", num.converter("500", 8, 10));
-        assertEquals("12", num.converter("A", 16, 8));
-        assertEquals("241", num.converter("A1", 16, 8));
         
     }
 

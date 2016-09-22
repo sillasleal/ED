@@ -14,28 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.poli.ecomp;
 
-import br.poli.ecomp.expressao.PosFixa;
+package br.poli.ecomp.expressao;
 
 /**
- * Classe inicial da aplicação
- *
+ * Classe de testes de expressões
  * @author Sillas S. Leal<sillas.s.leal@gmail.com>
  */
-public class Main {
+public class ExpressaoRun {
 
-    /**
-     * Método inicial da aplicação
-     *
-     * @param args Os argumentos da linha de comando
-     */
-    public static void main(String[] args) {
-        try {
-            PosFixa pos = new PosFixa();
-            System.out.println(pos.avaliar("5 3 + 6 * 2 1 + /"));
-        } catch (Exception exp) {
-            System.out.println(exp.getMessage());
-        }
-    }
 }
