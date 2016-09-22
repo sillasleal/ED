@@ -33,22 +33,22 @@ public class Main {
      * @param args Os argumentos da linha de comando
      */
     public static void main(String[] args) {
-//        System.out.println("Selecione o que você quer testar.\n");
-//        System.out.println("1 = Conversão de bsae");
-//        System.out.println("2 = Calcular expressão");
-//        System.out.println("Outro = Sair\n");
-//        //Lendo a opção a ser executada
-//        int opcao = new Scanner(System.in).nextInt();
-//        // Chamadno o método adequado
-//        switch (opcao) {
-//            case 1:
-//                NumeralRun.run();
-//                break;
-//            case 2:
+        System.out.println("Selecione o que você quer testar.\n");
+        System.out.println("1 = Conversão de bsae");
+        System.out.println("2 = Calcular expressão");
+        System.out.println("Outro = Sair\n");
+        //Lendo a opção a ser executada
+        int opcao = new Scanner(System.in).nextInt();
+        // Chamadno o método adequado
+        switch (opcao) {
+            case 1:
+                NumeralRun.run();
+                break;
+            case 2:
                 ExpressaoRun.run();
-//                break;
-//            default:
-//                System.exit(0);
-//        }
+                break;
+            default:
+                System.exit(0);
+        }
     }
 }
