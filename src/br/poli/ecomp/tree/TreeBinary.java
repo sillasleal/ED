@@ -117,22 +117,21 @@ public class TreeBinary implements Tree<Comparable> {
             test = aux.getData().compareTo(info);
             if (test == 0) {
                 if (aux.getLeft() != null && aux.getRight() != null) {
-                    return this.removeNode(aux);
+                    this.removeNode(aux);
                 } else if (aux.getLeft() == null) {
                     if (pai.getLeft() == aux) {
                         pai.setLeft((NodeBi) aux.getRight());
                     } else {
                         pai.setRight(aux.getRight());
                     }
-                    return true;
                 } else {
                     if (pai.getRight() == aux) {
                         pai.setLeft(aux.getLeft());
                     } else {
                         pai.setRight(aux.getLeft());
                     }
-                    return true;
                 }
+                return true;
             } else if (test > 0) {
                 pai = aux;
                 aux = aux.getLeft();
@@ -152,7 +151,7 @@ public class TreeBinary implements Tree<Comparable> {
      * @param node O nó a ser removido
      * @return Retorna TRUE em caso de sucesso ou FALSE em caso de erro.
      */
-    private boolean removeNode(NodeBi node) {
+    private void removeNode(NodeBi node) {
         NodeBi aux = (NodeBi) node.getRight();
         NodeBi pai = aux;
         //Buscando o nó mais a esquerda de node
@@ -166,7 +165,6 @@ public class TreeBinary implements Tree<Comparable> {
         } else {
             pai.setLeft((NodeBi) aux.getRight());
         }
-        return true;
     }
 
     @Override
