@@ -16,7 +16,7 @@
  */
 package br.poli.ecomp.expressao;
 
-import br.poli.ecomp.stack.Pilha;
+import br.poli.ecomp.stack.Stack;
 
 /**
  * Classe base para as expressões
@@ -40,7 +40,7 @@ abstract public class ExpressaoBase {
      * @throws Exception Lança uma exceção caso o operador não tenha sido
      * definido
      */
-    protected void calcByStack(Pilha pilha, char operador) throws Exception {
+    protected void calcByStack(Stack pilha, char operador) throws Exception {
         int a, b, val = 0;
         a = (int) pilha.pop();
         b = (int) pilha.pop();

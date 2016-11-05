@@ -18,6 +18,8 @@ package br.poli.ecomp;
 
 import br.poli.ecomp.convert.NumeralRun;
 import br.poli.ecomp.expressao.ExpressaoRun;
+import br.poli.ecomp.stack.Stack;
+import br.poli.ecomp.tree.TreeBinary;
 import java.util.Scanner;
 
 /**
@@ -27,28 +29,43 @@ import java.util.Scanner;
  */
 public class Main {
 
+    public static void main(String[] args) {
+        Stack st = new Stack();
+        System.out.println(st.size());
+        for (int i = 50; i > 0; i--) {
+            st.push(i);
+        }
+        System.out.println(st.size());
+        System.out.println(st);
+        for (int i = 0; i < 20; i++) {
+            System.out.println(st.pop());
+            System.out.println(st.size());
+        }
+    }
+
     /**
      * Método inicial da aplicação
      *
      * @param args Os argumentos da linha de comando
      */
-    public static void main(String[] args) {
-        System.out.println("Selecione o que você quer testar.\n");
-        System.out.println("1 = Conversão de bsae");
-        System.out.println("2 = Calcular expressão");
-        System.out.println("Outro = Sair\n");
-        //Lendo a opção a ser executada
-        int opcao = new Scanner(System.in).nextInt();
-        // Chamadno o método adequado
-        switch (opcao) {
-            case 1:
-                NumeralRun.run();
-                break;
-            case 2:
-                ExpressaoRun.run();
-                break;
-            default:
-                System.exit(0);
-        }
-    }
+//    public static void main(String[] args) {
+//        System.out.println("Selecione o que você quer testar.\n");
+//        System.out.println("1 = Conversão de bsae");
+//        System.out.println("2 = Calcular expressão");
+//        System.out.println("3 = Testar Arvores");
+//        System.out.println("Outro = Sair\n");
+//        //Lendo a opção a ser executada
+//        int opcao = new Scanner(System.in).nextInt();
+//        // Chamadno o método adequado
+//        switch (opcao) {
+//            case 1:
+//                NumeralRun.run();
+//                break;
+//            case 2:
+//                ExpressaoRun.run();
+//                break;
+//            default:
+//                System.exit(0);
+//        }
+//    }
 }

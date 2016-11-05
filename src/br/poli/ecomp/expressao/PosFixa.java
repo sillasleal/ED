@@ -16,7 +16,7 @@
  */
 package br.poli.ecomp.expressao;
 
-import br.poli.ecomp.stack.PilhaDinamica;
+import br.poli.ecomp.stack.Stack;
 
 /**
  *
@@ -35,7 +35,7 @@ public class PosFixa extends ExpressaoBase implements Expressao {
         // distâncias entre caracteres.
         // * Foi usado o caractere de espaço para separar pois isso permite 
         // expressões com números maiores que unidades
-        PilhaDinamica pilha = new PilhaDinamica();
+        Stack pilha = new Stack();
         char[] chars = expressao.trim().toCharArray();
         char c;
         String num = "";
