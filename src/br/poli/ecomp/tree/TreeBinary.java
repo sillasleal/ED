@@ -18,7 +18,7 @@ package br.poli.ecomp.tree;
 
 import br.poli.ecomp.interfaces.List;
 import br.poli.ecomp.interfaces.Tree;
-import br.poli.ecomp.node.NodeBi;
+import br.poli.ecomp.node.NodeComparableBi;
 
 /**
  * Implementação de uma arvore binária
@@ -30,7 +30,7 @@ public class TreeBinary implements Tree<Comparable> {
     /**
      * Raiz da arvore
      */
-    private NodeBi root;
+    private NodeComparableBi root;
 
     /**
      * String auxiliar para o método toString
@@ -52,13 +52,13 @@ public class TreeBinary implements Tree<Comparable> {
 
     @Override
     public void add(Comparable info) {
-        NodeBi novo = new NodeBi(info);
+        NodeComparableBi novo = new NodeComparableBi(info);
         if (this.root == null) {
             //A raiz ainda é nula(vazia), define info como o valor da raiz.
             this.root = novo;
         } else {
             int test;
-            NodeBi temp = this.root;
+            NodeComparableBi temp = this.root;
             while (temp != null) {
                 //Teste para verificar para qual lado caminhar
                 test = temp.getData().compareTo(info);
@@ -83,7 +83,7 @@ public class TreeBinary implements Tree<Comparable> {
                         break;
                     } else {
                         //Desce para a direita
-                        temp = (NodeBi) temp.getRight();
+                        temp = (NodeComparableBi) temp.getRight();
                     }
                 }
             }
@@ -94,7 +94,7 @@ public class TreeBinary implements Tree<Comparable> {
     public boolean contains(Comparable info) {
         boolean ret = false;
         int test;
-        NodeBi temp = this.root;
+        NodeComparableBi temp = this.root;
         while (temp != null) {
             test = temp.getData().compareTo(info);
             if (test == 0) {
@@ -103,7 +103,7 @@ public class TreeBinary implements Tree<Comparable> {
             } else if (test > 0) {
                 temp = temp.getLeft();
             } else {
-                temp = (NodeBi) temp.getRight();
+                temp = (NodeComparableBi) temp.getRight();
             }
         }
         return ret;
@@ -111,7 +111,8 @@ public class TreeBinary implements Tree<Comparable> {
 
     @Override
     public boolean remove(Comparable info) {
-        NodeBi aux = this.root, pai = aux;
+        NodeComparableBi aux = this.root;
+        NodeComparableBi pai = aux;
         int test;
         while (aux != null) {
             test = aux.getData().compareTo(info);
@@ -120,7 +121,7 @@ public class TreeBinary implements Tree<Comparable> {
                     this.removeNode(aux);
                 } else if (aux.getLeft() == null) {
                     if (pai.getLeft() == aux) {
-                        pai.setLeft((NodeBi) aux.getRight());
+                        pai.setLeft((NodeComparableBi) aux.getRight());
                     } else {
                         pai.setRight(aux.getRight());
                     }
@@ -137,7 +138,7 @@ public class TreeBinary implements Tree<Comparable> {
                 aux = aux.getLeft();
             } else {
                 pai = aux;
-                aux = (NodeBi) aux.getRight();
+                aux = (NodeComparableBi) aux.getRight();
             }
 
         }
@@ -151,9 +152,9 @@ public class TreeBinary implements Tree<Comparable> {
      * @param node O nó a ser removido
      * @return Retorna TRUE em caso de sucesso ou FALSE em caso de erro.
      */
-    private void removeNode(NodeBi node) {
-        NodeBi aux = (NodeBi) node.getRight();
-        NodeBi pai = aux;
+    private void removeNode(NodeComparableBi node) {
+        NodeComparableBi aux = (NodeComparableBi) node.getRight();
+        NodeComparableBi pai = aux;
         //Buscando o nó mais a esquerda de node
         while (aux.getLeft() != null) {
             pai = aux;
@@ -163,7 +164,7 @@ public class TreeBinary implements Tree<Comparable> {
         if (aux == pai) {
             node.setRight(aux.getRight());
         } else {
-            pai.setLeft((NodeBi) aux.getRight());
+            pai.setLeft((NodeComparableBi) aux.getRight());
         }
     }
 
@@ -204,12 +205,12 @@ public class TreeBinary implements Tree<Comparable> {
      *
      * @param node O nó inicial do percurso
      */
-    private void preOrder(NodeBi node) {
+    private void preOrder(NodeComparableBi node) {
         if (node != null) {
             this.strAux += node.getData().toString() + ", ";
             this.listAux.add(node.getData());
             this.preOrder(node.getLeft());
-            this.preOrder((NodeBi) node.getRight());
+            this.preOrder((NodeComparableBi) node.getRight());
         }
     }
 
@@ -218,12 +219,12 @@ public class TreeBinary implements Tree<Comparable> {
      *
      * @param node O nó inicial do percurso
      */
-    private void inOrder(NodeBi node) {
+    private void inOrder(NodeComparableBi node) {
         if (node != null) {
             this.inOrder(node.getLeft());
             this.strAux += node.getData().toString() + ", ";
             this.listAux.add(node.getData());
-            this.inOrder((NodeBi) node.getRight());
+            this.inOrder((NodeComparableBi) node.getRight());
         }
     }
 
@@ -232,10 +233,10 @@ public class TreeBinary implements Tree<Comparable> {
      *
      * @param node O nó inicial do percurso.
      */
-    private void postOrder(NodeBi node) {
+    private void postOrder(NodeComparableBi node) {
         if (node != null) {
             this.postOrder(node.getLeft());
-            this.postOrder((NodeBi) node.getRight());
+            this.postOrder((NodeComparableBi) node.getRight());
             this.strAux += node.getData().toString() + ", ";
             this.listAux.add(node.getData());
         }

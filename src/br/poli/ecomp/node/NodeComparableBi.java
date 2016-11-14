@@ -21,19 +21,19 @@ package br.poli.ecomp.node;
  *
  * @author Sillas S.Leal <sillas.s.leal@gmail.com>
  */
-public class NodeBi extends NodeComparable {
+public class NodeComparableBi extends NodeComparable {
 
     /**
      * O nó a esquerda
      */
-    private NodeBi left;
+    private NodeComparableBi left;
 
     /**
      * Construtor
      *
      * @param data O novo valor a ser definido para o nó
      */
-    public NodeBi(Comparable data) {
+    public NodeComparableBi(Comparable data) {
         super(data);
     }
 
@@ -42,7 +42,7 @@ public class NodeBi extends NodeComparable {
      *
      * @return Retorna o nó definido a esquerda deste.
      */
-    public NodeBi getLeft() {
+    public NodeComparableBi getLeft() {
         return left;
     }
 
@@ -52,7 +52,7 @@ public class NodeBi extends NodeComparable {
      * @param left O novo nó a esquerda
      * @return Método fluente. Retorna o próprio objeto.
      */
-    public NodeBi setLeft(NodeBi left) {
+    public NodeComparableBi setLeft(NodeComparableBi left) {
         this.left = left;
         /**/
         return this;
