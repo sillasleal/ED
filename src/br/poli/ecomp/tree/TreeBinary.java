@@ -30,7 +30,7 @@ public class TreeBinary implements Tree<Comparable> {
     /**
      * Raiz da arvore
      */
-    private NodeComparableBi root;
+    protected NodeComparableBi root;
 
     /**
      * String auxiliar para o método toString
