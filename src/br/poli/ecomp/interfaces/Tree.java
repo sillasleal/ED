@@ -24,6 +24,10 @@ package br.poli.ecomp.interfaces;
  */
 public interface Tree<T extends Comparable> {
 
+    public static final int MODO_PRE_ORDEM = -1;
+    public static final int MODO_ORDEM = 0;
+    public static final int MODO_POS_ORDEM = 1;
+
     /**
      * Método que insere um novo valor na arvore
      *

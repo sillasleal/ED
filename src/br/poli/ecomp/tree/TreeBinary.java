@@ -161,6 +161,7 @@ public class TreeBinary implements Tree<Comparable> {
             aux = aux.getLeft();
         }
         //Substituindo os valores
+        node.setData(aux.getData());
         if (aux == pai) {
             node.setRight(aux.getRight());
         } else {
@@ -177,10 +178,10 @@ public class TreeBinary implements Tree<Comparable> {
     public List iterator(int modo) {
         this.listAux = new br.poli.ecomp.list.List();
         switch (modo) {
-            case -1:
+            case MODO_PRE_ORDEM:
                 this.preOrder(this.root);
                 break;
-            case 1:
+            case MODO_POS_ORDEM:
                 this.postOrder(this.root);
                 break;
             default:
